@@ -25,7 +25,9 @@ from .camera_utils import (
     get_orthographic_projection_matrix,
     get_perspective_projection_matrix,
 )
-from .mesh_processor import meshVerticeInpaint
+# from issue reply: https://github.com/Tencent-Hunyuan/Hunyuan3D-2/issues/143#issuecomment-2762552480
+# from .mesh_processor import meshVerticeInpaint
+from mesh_processor import meshVerticeInpaint
 from .mesh_utils import load_mesh, save_mesh
 
 
