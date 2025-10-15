@@ -5,9 +5,9 @@ diffusers
 einops
 opencv-python
 numpy
-torch
+# torch
 transformers
-torchvision
+# torchvision
 #taming-transformers-rom1504
 #ConfigArgParse
 #ipdb
