@@ -4,9 +4,9 @@ pybind11
 diffusers
 einops
 opencv-python
-numpy==2.0.1
+numpy
 # torch
-transformers==4.48.0
+transformers
 # torchvision
 #taming-transformers-rom1504
 #ConfigArgParse
@@ -38,3 +38,6 @@ rembg
 onnxruntime
 #gevent
 #geventhttpclient
+
+# FLUX
+sentencepiece
