@@ -4,9 +4,9 @@ pybind11
 diffusers
 einops
 opencv-python
-numpy
+numpy==2.0.1
 # torch
-transformers
+transformers==4.48.0
 # torchvision
 #taming-transformers-rom1504
 #ConfigArgParse
