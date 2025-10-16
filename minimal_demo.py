@@ -22,12 +22,23 @@ model_path = 'tencent/Hunyuan3D-2'
 pipeline_shapegen = Hunyuan3DDiTFlowMatchingPipeline.from_pretrained(model_path)
 pipeline_texgen = Hunyuan3DPaintPipeline.from_pretrained(model_path)
 
-image_path = 'assets/demo.png'
+image_path = '/home/yujunhao/data/yujunhao/projects/Hunyuan3D-2/flux-dev.png'
 image = Image.open(image_path).convert("RGBA")
 if image.mode == 'RGB':
     rembg = BackgroundRemover()
     image = rembg(image)
 
+import time
+
+mesh_gen_start_time = time.time()
 mesh = pipeline_shapegen(image=image)[0]
+mesh_gen_end_time = time.time()
+
+texture_gen_start_time = time.time()
 mesh = pipeline_texgen(mesh, image=image)
+texture_gen_end_time = time.time()
 mesh.export('demo.glb')
+
+print(f"mesh gen time: {mesh_gen_end_time - mesh_gen_start_time}")
+print(f"texture gen time: {texture_gen_end_time - texture_gen_start_time}")
+print("Total time: ", texture_gen_end_time - mesh_gen_start_time)
